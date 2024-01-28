@@ -1,0 +1,34 @@
+/*
+Joins allow us to combine several tables, choose columns from each table, and use them in a single output. 
+All Topics Covered: Joins, Unions, Case Statements, Updating/Deleting Data, Partition By, Data Types, Aliasing, Views, Having Clause, GetDate(), Primary vs Foreign Key
+
+*/
+
+--JOINS; INNER, FULL/RIGHT/LEFT/OUTER JOINS
+
+--SELECT *
+--FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+--INNER JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+--ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+--SELECT EmployeeDemographics.EmployeeID, FirstName, LastName, JobTitle, Salary
+--FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+--FULL OUTER JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+--ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+--SELECT EmployeeDemographics.EmployeeID, FirstName, LastName, JobTitle, Salary
+--FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+--LEFT OUTER JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+--ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+--SELECT EmployeeDemographics.EmployeeID, FirstName, LastName, Salary
+--FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+--INNER JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+--ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+--ORDER BY Salary desc
+
+SELECT JobTitle, AVG(Salary) AS AVERAGE
+FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+INNER JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+Group BY JobTitle
