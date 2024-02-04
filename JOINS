@@ -5,6 +5,10 @@ All Topics Covered: Joins, Unions, Case Statements, Updating/Deleting Data, Part
 */
 
 --JOINS; INNER, FULL/RIGHT/LEFT/OUTER JOINS
+SELECT *
+FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 
 --SELECT *
 --FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
