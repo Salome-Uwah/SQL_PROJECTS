@@ -10,10 +10,23 @@ WHERE Age IS NOT NULL
 SELECT FirstName, LastName, Age,
 CASE 
 	WHEN Age = 35 THEN 'STANLEY' 
-	WHEN Age > 29 THEN 'OLD' 
-	
+	WHEN Age > 29 THEN 'OLD' 	
 ELSE 'YOUNG' 
 END
 FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
 WHERE Age IS NOT NULL
 ORDER BY Age
+
+
+
+SELECT FirstName, LastName, JobTitle, Salary,
+CASE
+		WHEN Jobtitle = 'salesman' THEN Salary + (Salary * .10)
+		WHEN Jobtitle = 'Manager' THEN Salary + (Salary * .05)
+		WHEN Jobtitle = 'cleaner' THEN Salary + (Salary * .003)
+ELSE
+		Salary + (Salary * .03)
+END AS SalaryAfterRaise
+FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+JOIN [SQL TUTORIAL].[dbo].[EmployeeSalary]
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
