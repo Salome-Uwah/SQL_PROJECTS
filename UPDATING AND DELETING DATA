@@ -1,0 +1,15 @@
+## UPDATING AND DELETING DATA IN A TABLE
+
+SELECT *
+FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+
+UPDATE[SQL TUTORIAL].[dbo].[EmployeeDemographics]
+SET EmployeeID = 1014
+WHERE FirstName = 'Joy' AND LastName = 'Chuk'
+UPDATE[SQL TUTORIAL].[dbo].[EmployeeDemographics]
+SET EmployeeID = 1015
+WHERE Age = 31
+
+DELETE
+FROM [SQL TUTORIAL].[dbo].[EmployeeDemographics]
+WHERE EmployeeID = 1010
